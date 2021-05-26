@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改页面</title>
+    <script src="js/jquery.min.js"></script>
+</head>
+
+<body>
+   <div id="upl">
+
+   </div>
+   <input type="submit" id="submit">
+</body>
+<script>
+    var id = null;
+    $.ajax({
+        type:"get",
+        url:"/backstage/upl1",
+        success:function(data){
+        var d = data.data;
+        id = d[0].id;
+        for (const i in d) {
+            $("#upl").append( `
+        <input type="text" name="name" value="${d[i].name}" id="name" placeholder="学生姓名"><br/>
+        <input type="text" name="grade" value="${d[i].grade}" id="grade" placeholder="等级">
+        `)
+        }
+    }
+}
+    )
+
+    $("#submit").click(function(){
+        $.ajax({
+            type:"post",
+            url:"/backstage/update",
+            data:{"name":$("#name").val(),"grade":$("#grade").val(),"id":id},
+            success:function(data){
+                if(data.data==1){
+                    window.location.href="/backstage"
+                }
+            }
+        })
+    })
+</script>
+</html>

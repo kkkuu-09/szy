@@ -1,0 +1,258 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>jQuery课程管理侧边菜单代码 - 站长素材</title>
+
+<link href="/stylesheets/style3.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="/stylesheets/back_style.css">
+
+<script type="text/javascript" src="/javascripts/jquery.min.js"></script>
+
+</head>
+<body>
+
+<div class="lvc-wrap" id="lvc-nav">
+  <ul class="lvc-nav">
+    <li class="nav-pic1 next-layer" title="课堂管理">
+      <a>课堂管理</a>
+      <ol>
+        <li>历史课堂统计</li>
+        <li>课堂实时统计</li>
+      </ol>
+    </li>
+    <li class="nav-pic2" title="科目管理"><a>科目管理</a></li>
+    <li class="nav-pic3" title="教室管理"><a>教室管理</a></li>
+    <li class="nav-pic4" title="课堂点播"><a>课堂点播</a></li>
+    <li class="nav-pic5" title="课堂直播"><a>课堂直播</a></li>
+    <li class="nav-pic6" title="用户管理"><a>用户管理</a></li>
+    <li class="nav-pic7 next-layer" title="报表统计">
+    	<a>报表统计</a>
+        <ol>
+        	<li>历史课堂统计</li>
+            <li>课堂实时统计</li>
+        </ol>
+    </li>
+    <li class="nav-pic8" title="日志管理"><a>日志管理</a></li>
+    <li class="nav-pic9" title="系统管理"><a>系统管理</a></li>
+    <li class="nav-pic10" title="订单管理"><a>订单管理</a></li>
+    <li class="nav-pic11" title="我的课堂"><a>我的课堂</a></li>
+    <li class="nav-pic12" title="个人中心"><a>个人中心</a></li>
+  </ul>
+  <button type="button" class="btn-nav"></button>
+</div>
+
+<div class="page-content">
+  <div class="header">今天的事项</div>
+  <div class="content-categories">
+    <div class="label-wrapper">
+      <input class="nav-item" name="nav" type="radio" id="opt-1">
+      <label class="category" for="opt-1">全部</label>
+    </div>
+    <div class="label-wrapper">
+      <input class="nav-item" name="nav" type="radio" id="opt-2" checked>
+      <label class="category" for="opt-2">重要</label>
+    </div>
+    <div class="label-wrapper">
+      <input class="nav-item" name="nav" type="radio" id="opt-3">
+      <label class="category" for="opt-3">一般</label>
+    </div>
+    <div class="label-wrapper">
+      <input class="nav-item" name="nav" type="radio" id="opt-4">
+      <label class="category" for="opt-4">喜好</label>
+    </div>
+  </div>
+  <div class="tasks-wrapper">
+    <div class="task">
+      <input class="task-item" name="task" type="checkbox" id="item-1" checked>
+      <label for="item-1">
+        <span class="label-text">Dashboard Design Implementation</span>
+      </label>
+      <span class="tag approved">Approved</span>
+    </div>
+    <div class="task">
+      <input class="task-item" name="task" type="checkbox" id="item-2" checked>
+      <label for="item-2">
+        <span class="label-text">Create a userflow</span>
+      </label>
+      <span class="tag progress">In Progress</span>
+    </div>
+    <div class="task">
+      <input class="task-item" name="task" type="checkbox" id="item-3">
+      <label for="item-3">
+        <span class="label-text">Application Implementation</span>
+      </label>
+      <span class="tag review">In Review</span>
+    </div>
+    <div class="task">
+      <input class="task-item" name="task" type="checkbox" id="item-4">
+      <label for="item-4">
+        <span class="label-text">Create a Dashboard Design</span>
+      </label>
+      <span class="tag progress">In Progress</span>
+    </div>
+    <div class="task">
+      <input class="task-item" name="task" type="checkbox" id="item-5">
+      <label for="item-5">
+        <span class="label-text">Create a Web Application Design</span>
+      </label>
+      <span class="tag approved">Approved</span>
+    </div>
+    <div class="task">
+      <input class="task-item" name="task" type="checkbox" id="item-6">
+      <label for="item-6">
+        <span class="label-text">Interactive Design</span>
+      </label>
+      <span class="tag review">In Review</span>
+    </div>
+    <div class="header upcoming">完成的事项</div>
+    <div class="task">
+      <input class="task-item" name="task" type="checkbox" id="item-7">
+      <label for="item-7">
+        <span class="label-text">Dashboard Design Implementation</span>
+      </label>
+      <span class="tag waiting">Waiting</span>
+    </div>
+    <div class="task">
+      <input class="task-item" name="task" type="checkbox" id="item-8">
+      <label for="item-8">
+        <span class="label-text">Create a userflow</span>
+      </label>
+      <span class="tag waiting">Waiting</span>
+    </div>
+    <div class="task">
+      <input class="task-item" name="task" type="checkbox" id="item-9">
+      <label for="item-9">
+        <span class="label-text">Application Implementation</span>
+      </label>
+      <span class="tag waiting">Waiting</span>
+    </div>
+    <div class="task">
+      <input class="task-item" name="task" type="checkbox" id="item-10">
+      <label for="item-10">
+        <span class="label-text">Create a Dashboard Design</span>
+      </label>
+      <span class="tag waiting">Waiting</span>
+    </div>
+  </div>
+</div>
+<div class="right-bar">
+  <div class="top-part">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+      class="feather feather-users">
+      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+      <circle cx="9" cy="7" r="4" />
+      <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+      <path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg>
+    <div class="count">6</div>
+  </div>
+  <div class="header">时刻表</div>
+  <div class="right-content">
+    <div class="task-box yellow">
+      <div class="description-task">
+        <div class="time">08:00 - 09:00 AM</div>
+        <div class="task-name">Product Review</div>
+      </div>
+      <div class="more-button"></div>
+      <div class="members">
+        <img src="img/22.jpg" alt="member" />
+      </div>
+    </div>
+    <div class="task-box blue">
+      <div class="description-task">
+        <div class="time">10:00 - 11:00 AM</div>
+        <div class="task-name">Design Meeting</div>
+      </div>
+      <div class="more-button"></div>
+      <div class="members">
+        <img src="img/22.jpg" alt="member" />
+      </div>
+    </div>
+    <div class="task-box red">
+      <div class="description-task">
+        <div class="time">01:00 - 02:00 PM</div>
+        <div class="task-name">Team Meeting</div>
+      </div>
+      <div class="more-button"></div>
+      <div class="members">
+        <img src="img/22.jpg" alt="member" />
+      </div>
+    </div>
+    <div class="task-box green">
+      <div class="description-task">
+        <div class="time">03:00 - 04:00 PM</div>
+        <div class="task-name">Release Event</div>
+      </div>
+      <div class="more-button"></div>
+      <div class="members">
+        <img src="img/22.jpg" alt="member" />
+      </div>
+    </div>
+    <div class="task-box blue">
+      <div class="description-task">
+        <div class="time">08:00 - 09:00 PM</div>
+        <div class="task-name">Release Event</div>
+      </div>
+      <div class="more-button"></div>
+      <div class="members">
+        <img src="img/22.jpg" alt="member" />
+      </div>
+    </div>
+    <div class="task-box yellow">
+      <div class="description-task">
+        <div class="time">11:00 - 12:00 PM</div>
+        <div class="task-name">Practise</div>
+      </div>
+      <div class="more-button"></div>
+      <div class="members">
+        <img src="img/22.jpg" alt="member" />
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+    //展开收起
+    $(".btn-nav").click(function () {
+      $(".lvc-wrap").toggleClass("lvc-close")
+      $("ol").toggleClass("small-ol")
+      $(".next-layer ol").hide()
+
+      if($("#lvc-nav").hasClass('lvc-close')){
+        $(".next-layer ").removeClass("arrow")
+      }
+    })
+
+    //选中状态
+    $(".lvc-nav li").click(function () {
+      $(this).siblings().find('ol').hide()
+      $(this).addClass("active").siblings().removeClass("active")
+    })
+
+    //选中子集清除父级active
+    $("ol>li").click(function (e) {
+      console.log('ol>li clicked')
+      e.stopPropagation()
+     $(this).parent().parent().removeClass("active")
+    })
+
+    //二级导航展开收起
+    $(".next-layer").click(function () {
+      $(this).children("ol").toggle();
+      $(this).toggleClass("arrow").siblings().removeClass("arrow")
+    })
+
+
+     $("ol li").click(function () {
+       if($("ol").hasClass('small-ol')) {
+         $(".small-ol").hide();
+         $(this).parent().parent().addClass("active")
+       }
+     })
+})
+</script>
+</body>
+</html>

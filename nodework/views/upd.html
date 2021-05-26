@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改页面</title>
+</head>
+<body>
+<form action="/backstage/upd" method="post">
+    <input type="hidden" value="<% datas[0].id %>" name="id">
+    姓名：<input type="text" name="name" value="<% datas[0].name %>"><br>
+    等级：<input type="text" name="grade" value="<% datas[0].grade %>"><br>
+    <input type="submit" value="提交">
+</form>
+</body>
+</html>
