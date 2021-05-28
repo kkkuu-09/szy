@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  
+        <!-- <a href="/add">新增</a> -->
+        <form action="/admin" method="POST">
+        <input type="text" name="search" placeholder="搜索">
+        <input type="submit">
+    </form>
+
+    <input type="button" onclick="add()" value="新增">
+        <table>
+
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>姓名</th>
+                <th>等级</th>
+                <th>信息管理</th>
+                <th>操作</th>
+           
+              </tr>
+            </thead>
+            <tbody>
+  
+        
+             <% for(let o of data){%>
+                <tr>
+                    <td><%=o.id %></td>
+                    <td><%=o.name %></td>
+                    <td><%=o.grade %></td>
+                    <td><input type="button" class="upd" value="修改" data_id="<%=o.id%>"></td>
+                    <td><a href="/backstage/del/<%=o.id %>">删除</a></td>
+                    
+    
+                <% } %> 
+            </tbody>
+      </table>
+ <script>
+function add(){
+    window.location.href="/admin/add";
+}
+Array.from(document.getElementsByClassName("upd")).forEach(i=>{
+    i.onclick=function(){
+        window.location.href="/admin/upt"+this.getAttribute("data_id");
+    }
+})
+
+ </script>
+</body>
+</html>
